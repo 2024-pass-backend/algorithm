@@ -1,4 +1,4 @@
-package Week1.먹을것인가_먹힐것인가;
+package Week1.개인.먹을것인가_먹힐것인가;
 
 import java.io.BufferedReader;
 import java.io.IOException;

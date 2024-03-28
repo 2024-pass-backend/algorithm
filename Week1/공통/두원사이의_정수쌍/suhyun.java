@@ -1,4 +1,4 @@
-package Week1.두원사이의_정수쌍;
+package Week1.공통.두원사이의_정수쌍;
 /*
 7:17 ~
 1. 왜 파라미터가 long이지?

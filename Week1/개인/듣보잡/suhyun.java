@@ -1,4 +1,4 @@
-package Week1.듣보잡;
+package Week1.개인.듣보잡;
 
 import java.io.BufferedReader;
 import java.io.IOException;

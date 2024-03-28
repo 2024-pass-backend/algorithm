@@ -1,4 +1,4 @@
-package Week1.요격시스템;
+package Week1.공통.요격시스템;
 
 import java.util.Arrays;
 
