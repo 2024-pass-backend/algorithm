@@ -1,4 +1,4 @@
-package Week1.숫자카드2;
+package Week1.개인.숫자카드2;
 
 import java.io.BufferedReader;
 import java.io.IOException;
