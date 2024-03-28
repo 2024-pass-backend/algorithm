@@ -21,6 +21,8 @@
 - Pull Request을 진행합니다.
 - PR 진행 시, 템플릿에 맞춰 영양가 있는 내용을 작성합니다. 대충 형식상으로 때우지 말고 정성껏 작성합니다.
 
+- [PR진행 방법](https://github.com/woowacourse/woowacourse-docs/tree/main/precourse)을 참조하세요.
+
 ---
 
 ## 컨벤션
@@ -28,7 +30,12 @@
 ### PR컨벤션
 
 - PR제목
-    - [Solved / Failed] PRG_문제명
+  처음 문제를 푼 경우,
+  - type1 : [Solved / Failed] PRG_문제명
+  - type2 : [Solved / Failed] PRG_문제명(복습필요)
+  이후 복습을 한경우,
+  - [Solved / Failed] PRG_문제명(복습횟수)
+    - ex) [Solved / Failed] PRG_문제명(2)
 
 ### 커밋컨벤션
 
