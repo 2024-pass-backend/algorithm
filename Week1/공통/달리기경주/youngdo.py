@@ -1,4 +1,4 @@
-## 시간 복잡도= calling*players
+## 시간 복잡도= calling*players=> 시간초과
 # def solution(players, callings):
 #     for i in callings:
 #         idx=players.index(i)
