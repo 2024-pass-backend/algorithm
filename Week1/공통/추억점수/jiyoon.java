@@ -20,6 +20,7 @@ public class jiyoon {
       }
       answer[i] = score;
     }
+
     return answer;
   }
 }
