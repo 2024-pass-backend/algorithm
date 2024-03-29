@@ -10,17 +10,17 @@ def pro(cnt):
     if cnt == 3:
         if bfs():
             flag = True
-            return
-            # print("YES")
-            # sys.exit(0)
+            # return
+            print("YES")
+            sys.exit(0)
     
     else:
         for x in range(n):
             for y in range(n):
                 if graph[x][y] == "X":
-                    graph[x][y] == "O"
+                    graph[x][y] = "O"
                     pro(cnt + 1)
-                    graph[x][y] == "X"
+                    graph[x][y] = "X"
 
 def bfs():
     # 동, 서, 남, 북
@@ -58,8 +58,8 @@ for i in range(n):
 
 pro(0)
 
-# print("YES" if flag else "NO")
-if flag:
-    print("YES")
-else:
-    print("NO")
+print("YES" if flag else "NO")
+# if flag:
+#     print("YES")
+# else:
+#     print("NO")
