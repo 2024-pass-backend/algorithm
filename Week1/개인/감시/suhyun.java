@@ -69,7 +69,7 @@ public class suhyun {
         for(int i=0; i<cctv[c.type].length; i++){
             int count = 0;
             for(int j=0; j<cctv[c.type][i].length; j++){
-                int d = cctv[c.type][i][j];
+                int d = cctv[c.type][i][j]; // 파이썬에서 이를 적용하려면 cctv[c.type][i][j] 여야한다는 소리인듯?
                 count += observation(d, c.x, c.y, newMap);
             }
             pro(idx + 1, remain-count, newMap);
