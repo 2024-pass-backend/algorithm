@@ -1,7 +1,8 @@
+# 10:38
 import sys, copy
 si = sys.stdin.readline
 n, m = map(int, si().split())
-remain, cnt, ans = n*m, 0, sys.maxsize 
+remain, cnt, ans = n*m, 0, sys.maxsize
 graph = []
 cctvs = []
 dir = [[0,1],[1,0],[0,-1],[-1,0]] # 동 남 서 북
@@ -19,12 +20,11 @@ for i in range(n):
     for j in range(m):
         if graph[i][j] >= 1 and graph[i][j] <= 5:
             cctvs.append([graph[i][j], i, j])
+            cnt += 1
         if graph[i][j] != 0:
             remain -= 1
-    cnt = len(cctvs)
 
-def observation(d, graph, x, y):
-    global n, m
+def observation(graph, d, x, y):
     count = 0
     
     for direction in d:
@@ -32,39 +32,41 @@ def observation(d, graph, x, y):
         while True:
             nx += dir[direction][0]
             ny += dir[direction][1]
-            
-            if (nx < 0 or ny < 0 or nx >= n or ny >= m):
+            if nx < 0 or ny < 0 or nx >= n or ny >= m:
                 break
             
             if graph[nx][ny] == 6:
                 break
             
-            if graph[nx][ny] == -1 or (graph[nx][ny] >= 1 and graph[x][ny] <= 5):
-                continue
-            
-            graph[nx][ny] = -1
-            count += 1
+            if graph[nx][ny] == 0:
+                graph[nx][ny] = -1
+                count += 1
     
     return count
-
+            
+        
+            
 def pro(idx, graph, remain):
-    global cnt, ans
     if idx == cnt:
-        ans = min(remain, ans)
+        global ans
+        ans = min(ans, remain)
         return
-    
+        
     else:
-        new_graph = copy.deepcopy(graph)
+        
         type, x, y = cctvs[idx]
+        newGraph = copy.deepcopy(graph)
+        
         for d in cctv[type]:
             count = 0
-            count += observation(d, new_graph, x, y)
+            count += observation(newGraph, d, x, y)
             print(count)
             print("=============")
-            pro(idx + 1, new_graph, remain - count)
-            new_graph = copy.deepcopy(graph)
-
+            pro(idx + 1, newGraph, remain - count)
+            newGraph = copy.deepcopy(graph)
 
 pro(0, graph, remain)
+
 print(ans)
+
             
