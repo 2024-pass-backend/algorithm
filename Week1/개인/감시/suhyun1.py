@@ -60,8 +60,8 @@ def pro(idx, graph, remain):
         for d in cctv[type]:
             count = 0
             count += observation(newGraph, d, x, y)
-            print(count)
-            print("=============")
+            # print(count)
+            # print("=============")
             pro(idx + 1, newGraph, remain - count)
             newGraph = copy.deepcopy(graph)
 
