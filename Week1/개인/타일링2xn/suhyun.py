@@ -10,4 +10,4 @@ d[3] = 3
 for i in range(4, len(d)):
     d[i] = d[i - 1] + d[i - 2]
 
-print(d[n])
+print(d[n] % 10007)
