@@ -1,7 +1,7 @@
 import java.io.*;
 import java.util.*;
 
-class Solution {
+public class jiyoon {
   public int solution(int[][] targets) {
     int answer = 1;     // 최소한 한 개의 구간이 존재하면서 다른 어떤 구간과도 겹치지 않는 경우가 적어도 하나는 존재
     Arrays.sort(targets, (x, y) -> x[0] - y[0]);        // targets배열 정렬
