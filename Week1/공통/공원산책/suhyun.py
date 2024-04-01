@@ -1,8 +1,8 @@
 def solution(park, routes):
     
-    x, y = 0, 0
     dir = {"E":(0,1), "S":(1,0), "W":(0,-1), "N":(-1,0)}
     
+    x, y = 0, 0
     for i in range(len(park)):
         for j in range(len(park[0])):
             if park[i][j] == "S":
