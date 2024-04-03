@@ -1,5 +1,6 @@
 import sys
 si = sys.stdin.readline
+sys.setrecursionlimit(100000)
 dir = [[0,1], [1,0], [0,-1], [-1,0]]
 v_cnt, o_cnt, v_ans, o_ans = 0, 0, 0, 0
 
@@ -26,7 +27,7 @@ for i in range(r):
     for j, elem in enumerate(adj[i]):
         if elem != '#' and not visited[i][j]:
             dfs(i, j)
-            print(i, j, v_cnt, o_cnt)
+            # print(i, j, v_cnt, o_cnt)
             if v_cnt >= o_cnt:
                 if (v_cnt == 0 and o_cnt == 0):
                     continue
@@ -36,5 +37,5 @@ for i in range(r):
                     continue
                 o_ans += o_cnt
             v_cnt, o_cnt = 0, 0
-print('-----')
+# print('-----')
 print(o_ans, v_ans)
