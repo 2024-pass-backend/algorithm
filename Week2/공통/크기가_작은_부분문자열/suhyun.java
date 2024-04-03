@@ -5,10 +5,8 @@ public class suhyun {
         int answer = 0;
         for(int i=0; i<t.length() - p.length() + 1; i++){
             String s = "";
-            for(int j=i; j<i+p.length(); j++){
-                s += String.valueOf(t.charAt(j));
-            }
-            if(Integer.parseInt(s) <= Integer.parseInt(p)){
+            s = t.substring(i, i+p.length());
+            if(Long.parseLong(s) <= Long.parseLong(p)){
                 answer += 1;
             }
         }
