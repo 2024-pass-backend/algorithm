@@ -1,46 +1,41 @@
 def solution(plans):
+    global answer, todo
     answer = []
+    todo = []
     plans = sorted(plans, key=lambda x:x[1])
-    temp = []
-    plan_dic = {name:[start, int(playtime)] for name, start, playtime in plans}
     
     for i in range(len(plans)):
-        plan_name = plans[i][0]
-        end_time = time_cal(plan_dic[plan_name][0], plan_dic[plan_name][1])
-        # print(plan_name, end_time)
-        
-        if i<len(plans)-1:
-            if end_time < plans[i+1][1]:
-                answer.append(plan_name)
-                remain_time = time_diff(plans[i+1][1], end_time)
-                if temp:
-                    while remain_time:
-                        p_n = temp.pop()
-                        plan_dic[p_n][1] -= remain_time
-                        if plan_dic[p_n][1] > 0:
-                            remain_time = 0
-                            temp.append(p_n)
-                        elif plan_dic[p_n][1] == 0:
-                            remain_time = 0
-                            answer.append(p_n)
-                        else:
-                            remain_time = abs(plan_dic[p_n][1])
-            elif end_time == plans[i+1][1]: 
-                answer.append(plan_name)
-            else:
-                temp.append(plan_name)
-                play_time = time_diff(end_time, plans[i+1][1])
-                plan_dic[plan_name][1] -= play_time
+        if i+1 == len(plans):
+            next_plan = None
         else:
-            answer.append(plan_name)
-            
-    while temp:
-        p_n = temp.pop()
-        answer.append(p_n)
-                                                 
+            next_plan = plans[i+1]
+        process(plans[i], next_plan)
+        
+    while todo:
+        process(todo.pop(), None)
     return answer
 
-def time_cal(str_time, playtime):
+def process(now_list, next_list):
+    # 다음 과제시간까지의 간격
+    if next_list==None:
+        term = float('inf')
+    else:
+        term = time_diff(now_list[1], next_list[1])
+        
+    play_time = int(now_list[2])
+    remain_time = play_time - term
+    if  remain_time> 0:
+        now_list[2] = play_time-term
+        todo.append(now_list)
+    else:
+        answer.append(now_list[0])
+        if (remain_time<0) & len(todo)>0:
+            now_time = time_add(now_list[1], play_time)
+            todo[-1][1] = now_time
+            process(todo.pop(), next_list)
+    
+
+def time_add(str_time, playtime):
     h, m = int(str_time[:2]), int(str_time[-2:])
     m += playtime
     
