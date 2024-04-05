@@ -1,44 +1,51 @@
-# 재귀 dfs로 풀고 싶은데 구현을 못 하겠음
+from collections import deque
 def solution(board):
-    answer = 0
-    gx, gy = (3, 1)
     h, w = len(board), len(board[0])
-    direc_dic = {'up':(0, -1), 'down':(0, 1), 'left':(-1, 0), 'right':(1, 0)}
     
-    def move(rx, ry, direction):
-        nx, ny = rx, ry
-        while True:
-            tx, ty = nx, ny
-            tx += direc_dic[direction][0]
-            ty += direc_dic[direction][1]
-            
-            # 경계
-            if (tx<0) or (ty<0) or (tx>=w) or (tx>=h):
-                return nx, ny
-            # 장애물
-            if board[ty][tx] == 'D':
-                return nx, ny
-            
-            nx, ny = tx, ty
+    Flag = False
+    for i in range(h):
+        for j in range(w):
+            if board[i][j] == 'R':
+                rx, ry = j, i
+                Flag = True
+                break
+        if Flag:
+            break
     
-    def dfs(stack, depth=1):
-        print(stack, depth)
-        # 더 이상 수행할 것 없음
-        if len(stack)==0:
-            
-            return 
-        
-        rx, ry = stack.pop()
-        temp_stack = set([])
-        for d in direc_dic.keys():
-            dx, dy = move(rx, ry, d)
-            if dx==gx and dy==gy:
-                return depth
-            temp_stack.add((dx, dy))
-        stack.extend(temp_stack)
-        
-        dfs(stack, depth+1)
+    # 미끄러지기
+    move_dic = {'down':(0, 1), 'up':(0, -1), 'left':(-1, 0), 'right':(1, 0)}
+    def OoR(x, y):
+        return (x<0) or (y<0) or (x>=w) or (y>=h)
     
-    dfs([(6, 0)])
+    def slip(x, y, direction):
+        tx, ty = x, y
+        # 장애물 만나면 멈추기 + 범위 벗어나면 멈추기
+        while (OoR(tx, ty)==False) and ((board[ty][tx] != 'D')):
+            tx += move_dic[direction][0]
+            ty += move_dic[direction][1]
+        # 장애물/벽 만나기 직전 지점 return
+        return tx-move_dic[direction][0], ty-move_dic[direction][1]
+    
+    def bfs(x, y):
+        que = deque([(x, y)])
+        visited = [[-1]*w for _ in range(h)]
+        visited[y][x] += 1
         
+        while que:
+            nx, ny = que.popleft()
+            for d in move_dic.keys():
+                sx, sy = slip(nx, ny, d)
+                if visited[sy][sx] > -1:
+                    continue
+                que.append((sx, sy))
+                visited[sy][sx] = visited[ny][nx] + 1
+                
+                if board[sy][sx] == 'G':
+                    for l in visited:
+                        print(l)
+                    return visited[sy][sx]
+        return -1
+    
+    answer = bfs(rx, ry)
+
     return answer
