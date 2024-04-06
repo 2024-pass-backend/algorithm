@@ -1,8 +1,6 @@
-package Week2.공통.과제진행하기;
-
 import java.util.*;
 
-class jiyoon {
+class Solution {
   public String[] solution(String[][] plans) {
     Task[] arr = new Task[plans.length];
 
@@ -75,12 +73,12 @@ class jiyoon {
     }
   }
 
-  static class Task {         // 작업을 나타내는 Task 클래스
+  static class Task {
     private String name;
     private int start;
     private int time;
 
-    public Task(String name, String start, String time) {       // Task 객체를 초기화하는 생성자
+    public Task(String name, String start, String time) {
       this.name = name;
       this.start = timeToMinute(start);
       this.time = Integer.parseInt(time);

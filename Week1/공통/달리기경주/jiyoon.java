@@ -3,10 +3,8 @@ package Week1.공통.달리기경주;
 import java.util.Arrays;
 import java.util.HashMap;
 
-public class jiyoon {
-  public static void main(String[] args) {
-    String[] players = {"mumu", "soe", "poe", "kai", "mine"};
-    String[] callings = {"kai", "kai", "mine", "mine"};
+class jiyoon {
+    public String[] solution(String[] players, String[] callings) {
 
     HashMap<String, Integer> map = new HashMap<>();     // Key : 선수 이름, Value : 등수
 

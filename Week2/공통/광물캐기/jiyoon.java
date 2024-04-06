@@ -1,8 +1,6 @@
-package Week2.공통.광물캐기;
-
 import java.util.*;
 
-public class jiyoon {
+class Solution {
 
   static class Mineral {
     private int diamond;
