@@ -1,4 +1,5 @@
-class Solution {
+package Week2.공통.덧칠하기;
+public class jiyoon {
   public int solution(int n, int m, int[] section) {
     int answer = 0;
 
