@@ -1,6 +1,8 @@
+package Week2.공통.명예의전당_1;
+
 import java.util.*;
 
-class Solution {
+class jiyoon {
   public int[] solution(int k, int[] score) {
     int[] answer = new int[score.length];
     ArrayList<Integer> list = new ArrayList<>();        // 명예의 전당

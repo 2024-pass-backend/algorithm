@@ -1,4 +1,6 @@
-class Solution {
+package Week2.공통.문자열나누기;
+
+class jiyoon {
   public int solution(String s) {
     int answer = 0;
     char x = '0';

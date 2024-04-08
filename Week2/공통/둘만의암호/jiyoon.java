@@ -1,4 +1,6 @@
-class Solution {
+package Week2.공통.둘만의암호;
+
+class jiyoon {
   public String solution(String s, String skip, int index) {
     // answer만들 때 사용할 alphabet문자열(skip에 포함된 문자 제외)
     String alphabet = "abcdefghijklmnopqrstuvwxyz";

@@ -1,6 +1,8 @@
+package Week2.공통.대충만든자판;
+
 import java.util.*;
 
-class Solution {
+class jiyoon {
   public int[] solution(String[] keymap, String[] targets) {
     int[] answer = new int[targets.length];
 
