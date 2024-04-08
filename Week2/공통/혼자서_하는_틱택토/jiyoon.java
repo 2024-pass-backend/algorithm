@@ -1,6 +1,8 @@
+package Week2.공통.혼자서_하는_틱택토;
+
 import java.util.*;
 
-class Solution {
+public class jiyoon {
   public int solution(String[] board) {
 
     int o = 0;      // "O"의 등장 횟수

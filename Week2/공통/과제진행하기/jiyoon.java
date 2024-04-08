@@ -1,6 +1,8 @@
+package Week2.공통.과제진행하기;
+
 import java.util.*;
 
-class Solution {
+class jiyoon {
   public String[] solution(String[][] plans) {
     Task[] arr = new Task[plans.length];
 
