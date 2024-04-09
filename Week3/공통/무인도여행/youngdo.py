@@ -1,6 +1,7 @@
+
 def bfs(visited, i, j, maps):
-    mX = [0, 1, -1, 0]
-    mY = [1, 0, 0, -1]
+    dx = [0, 1, -1, 0]
+    dy = [1, 0, 0, -1]
     queue = [[i, j]]
     visited[i][j] = True
     cnt = 0
@@ -9,12 +10,12 @@ def bfs(visited, i, j, maps):
         x, y = queue.pop(-1)
         cnt += int(maps[x][y])
         for k in range(4):
-            nX = x + mX[k]
-            nY = y + mY[k]
-            if nX < 0 or nX >= len(maps) or nY < 0 or nY >= len(maps[0]) or visited[nX][nY] or maps[nX][nY] == "X":
+            nx = x + dx[k]
+            ny = y + dy[k]
+            if nx < 0 or nx >= len(maps) or ny < 0 or ny >= len(maps[0]) or visited[nx][ny] or maps[nx][ny] == "X":
                 continue
-            queue.append([nX, nY])
-            visited[nX][nY] = True
+            queue.append([nx, ny])
+            visited[nx][ny] = True
 
     return cnt
 
