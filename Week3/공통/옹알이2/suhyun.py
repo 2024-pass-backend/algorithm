@@ -1,4 +1,6 @@
-# 10:16 ~ 
+# 10:16 ~ 10:26 
+# 답지 풀이
+
 def solution(babbling):
     answer = 0
     can = ['aya', 'ye', 'woo', 'ma']
