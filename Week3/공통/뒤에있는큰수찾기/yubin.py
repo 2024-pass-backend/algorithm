@@ -1,5 +1,19 @@
-from collections import deque, defaultdict
 def solution(numbers):
+    answer = [-1] * len(numbers)
+    stack = []
+    for idx, num in enumerate(numbers):
+        while stack:
+            i, n = stack.pop()
+            if num > n:
+                answer[i] = num
+            else:
+                stack.append((i, n))
+                break
+        stack.append((idx, num))
+    return answer
+
+from collections import deque, defaultdict
+def solution_old(numbers):
     answer = deque([])
     bigger = defaultdict(list)
     for i in range(len(numbers)):
