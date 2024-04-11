@@ -5,7 +5,7 @@ def solution(x, y, n):
     queue.append((x,0))
     visited = set()
     while queue:
-        i, j = queue.pop()
+        i, j = queue.popleft()
         if i>y or i in visited:
             continue
         visited.add(i)
