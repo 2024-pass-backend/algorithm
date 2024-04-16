@@ -1,4 +1,4 @@
-def gcd(a, b):
+def gcd(a, b): #최대공약수
     r = b % a
     if r == 0:
         return a
