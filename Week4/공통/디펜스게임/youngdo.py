@@ -13,4 +13,5 @@ def solution(n, k, enemy):
             sumEnemy += heappop(heap)
             k -= 1
         answer += 1
+
     return answer
