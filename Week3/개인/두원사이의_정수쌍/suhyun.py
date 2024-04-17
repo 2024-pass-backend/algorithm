@@ -8,10 +8,8 @@ def solution(r1, r2):
     for r in range(1, r2):
         if r < r1:
             answer += (getDotCnt(r, r2, "r2") - getDotCnt(r, r1, "r1"))
-            print(answer)
         else:
             answer += getDotCnt(r, r2, "r2")
-            print(answer)
     
     answer = answer * 4
     answer += (r2 - r1 + 1) * 4

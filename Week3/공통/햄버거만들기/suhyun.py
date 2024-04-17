@@ -21,6 +21,8 @@
 # 테스트 17 〉	통과 (0.00ms, 10.3MB)
 # 테스트 18 〉	통과 (0.01ms, 10.1MB)
 
+# 파이썬에서 문자열.pop(i)은 시간복잡도가 O(N)이다.
+
 def solution(ingredient):
     answer = 0
     
