@@ -18,6 +18,8 @@ def solution(n, k, enemy):
         
             if n >= num:
                 n -= num
+            else:
+                break
 
         answer += 1
 

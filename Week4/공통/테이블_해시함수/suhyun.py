@@ -13,7 +13,7 @@ def solution(data, col, row_begin, row_end):
         sum = 0
         for k in range(len(data[0])):
             sum += (data[i][k] % (i+1))
-        print(sum)
+        # print(sum)
         answer = answer ^ (sum)    
     
     return answer

@@ -1,7 +1,7 @@
 def solution(k, tangerine):
     answer = 0
     
-    a = [0] * 100001
+    a = [0] * 10000001
     # 1 - 1개
     # 2 - 2개
     # 3 - 2개
@@ -15,6 +15,8 @@ def solution(k, tangerine):
     c = 0
     
     for aa in a:
+        if aa == 0:
+            break
         if c < k:
             c += aa
         else:
