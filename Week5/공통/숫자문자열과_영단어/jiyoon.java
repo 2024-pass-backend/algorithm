@@ -7,7 +7,7 @@ public class jiyoon {
       String[] words = {"zero", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine"};
 
       for (int i = 0; i < words.length; i++) {
-        if (s.contains(words[i])) {                                 // s에 영단어 문자가 있다면
+        if (s.contains(words[i])) {                               // s에 영단어 문자가 있다면
           s = s.replaceAll(words[i], Integer.toString(i));        // 해당 문자열을 숫자로 변경
         }
       }
