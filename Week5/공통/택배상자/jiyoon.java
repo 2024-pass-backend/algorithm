@@ -9,7 +9,7 @@ public class jiyoon {
       Queue<Integer> queue = new LinkedList<>();      // 기존 컨테이너
       Stack<Integer> stack = new Stack<>();           // 보조 컨테이너
 
-      for (int i = 1; i <= 5; i++) {      // 1~5까지 기존 컨테이너에 삽입
+      for (int i = 1; i <= order.length; i++) {      // 1~5까지 기존 컨테이너에 삽입
         queue.add(i);
       }
 
