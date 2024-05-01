@@ -23,10 +23,10 @@ def solution(queue1, queue2):
             sum1 += num
         answer += 1
 
-    # 두 큐를 모두 왕복했는데도 반복문이 돈다면, 
-    # 같게 만들 수 없는 경우이다.
-    if answer == limit:
-        return -1
+        # 두 큐를 모두 왕복했는데도 반복문이 돈다면, 
+        # 같게 만들 수 없는 경우이다.
+        if answer == limit:
+            return -1
         
     return answer
 
