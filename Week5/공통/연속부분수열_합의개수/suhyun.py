@@ -6,7 +6,7 @@ def solution(elements):
         k = elements.popleft()
         elements.append(k)
         for i in range(1,len(elements)):
-            print(list(elements)[:i])
+            # print(list(elements)[:i])
             answer.add(sum(list(elements)[:i]))
     answer.add(sum(elements))
     return len(answer)
