@@ -1,0 +1,20 @@
+# 상대방의 수가 0이 될때까지, 
+# a > b, 함수(b, a % b)
+def solution(n, m):
+    answer = []
+    if n >= m:
+        a = getGCD(n, m)    
+    else:
+        a = getGCD(n, m)
+    answer.append(a)
+    answer.append(a * (n // a) * (m // a))
+
+    return answer
+
+def getGCD(a, b):
+    if b == 0:
+        return a
+    else:
+        return getGCD(b, a % b)
+
+print(solution(3, 12))

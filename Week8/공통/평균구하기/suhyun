@@ -1,0 +1,9 @@
+def solution(arr):
+    answer = 0
+    s = 0
+    for a in arr:
+        s += a
+    
+    return s / len(arr)
+
+print(solution([1,2,3,4]))

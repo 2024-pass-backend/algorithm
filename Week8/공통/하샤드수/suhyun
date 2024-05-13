@@ -1,0 +1,15 @@
+#7:48 ~ 
+def solution(x):
+    # answer = True
+    a = str(x)
+    s = 0
+    for aa in a:
+        s += int(aa)
+    
+    if x % s == 0:
+        return True
+    else:
+        return False
+    # return answer
+
+print(solution(10))
