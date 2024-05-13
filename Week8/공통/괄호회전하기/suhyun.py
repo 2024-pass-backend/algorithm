@@ -41,6 +41,8 @@ def check(aa):
             else:
                 check_not = False
                 break
+    if a:
+        check_not = False
     return check_not
 
 print(solution("(){{"))
