@@ -22,7 +22,7 @@ def check(arr):
 def partition(arr):
     if len(arr) == 1:
         getCount(arr)
-        print(answer)
+        # print(answer)
         return
     
     #모든 수가 같거나
@@ -33,7 +33,7 @@ def partition(arr):
             answer[0] += 1
         return
     
-    getPrint(arr)
+    # getPrint(arr)
     a = [[0] * (len(arr[0]) // 2) for _ in range(len(arr) // 2)]
     # 1사분면
     r, c = 0, 0
