@@ -51,7 +51,7 @@ def bfs(sx, sy, ex, ey, place):
                 graph[nx][ny] = graph[xx][yy] + 1
                 q.append((nx, ny))
 
-    getPrint(graph, sx, sy, ex, ey)
+    # getPrint(graph, sx, sy, ex, ey)
     return 3 if graph[ex][ey] == 0 else graph[ex][ey] 
 
 # print(solution([["POOOP", "OXXOX", "OPXPX", "OOXOX", "POXXP"], ["POOPX", "OXPXP", "PXXXO", "OXXXO", "OOOPP"], ["PXOPX", "OXOXP", "OXPOX", "OXXOP", "PXPOX"], ["OOOXX", "XOOOX", "OOOXX", "OXOOX", "OOOOO"], ["PXPXP", "XPXPX", "PXPXP", "XPXPX", "PXPXP"]]))
