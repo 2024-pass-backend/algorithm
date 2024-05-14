@@ -8,7 +8,7 @@ def solution(numbers):
             answer.append(n + 1)
         else:
             a = '0' + bin(n)[2:]
-            print(a)
+            # print(a)
             right_zero_idx = a.rfind('0')
             t = list(a)
             t[right_zero_idx] = '1'
