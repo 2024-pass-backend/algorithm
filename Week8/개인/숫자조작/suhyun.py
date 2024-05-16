@@ -12,7 +12,7 @@ for t in range(1, tc+1):
         n[per[1]] = temp_a
         n[per[0]] = temp_b
         num = ''.join(n)
-        print(num)
+        # print(num)
         if num[0] == '0':
             n = list(aa)
             continue
